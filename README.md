@@ -19,7 +19,7 @@ This Chrome extension helps you filter out sold items on laneros.com marketplace
 
 ### Production Installation
 
-1. Download the latest release from the [Releases](https://github.com/yourusername/laneros-item-filter/releases) page
+1. Download the latest release from the [Releases](https://github.com/geektimus/laneros-item-filter/releases) page
 2. Extract the downloaded zip file
 3. Open Chrome and go to `chrome://extensions/`
 4. Enable "Developer mode" in the top right corner
@@ -72,6 +72,12 @@ The project includes unit tests and end-to-end tests:
    npm run test:e2e
    ```
 
+4. Run all tests:
+
+   ```bash
+   npm run test:all
+   ```
+
 ### Building
 
 1. Create a production build:
@@ -81,6 +87,32 @@ The project includes unit tests and end-to-end tests:
    ```
 
    This will create an `extension.zip` file ready for distribution.
+
+### Creating a Release
+
+1. Update the version in `manifest.json` and `package.json`:
+
+   ```json
+   {
+     "version": "1.0.0"
+   }
+   ```
+
+2. Create a new tag:
+
+   ```bash
+   git tag -a v1.0.0 -m "Release v1.0.0"
+   git push origin v1.0.0
+   ```
+
+3. The release workflow will automatically:
+   - Build the extension
+   - Create a GitHub release
+   - Upload the extension package
+
+4. You can find the release package in two places:
+   - **GitHub Releases**: Go to the [Releases](https://github.com/geektimus/laneros-item-filter/releases) page and download `laneros-item-filter-v1.0.0.zip`
+   - **GitHub Actions**: Go to the [Actions](https://github.com/geektimus/laneros-item-filter/actions) tab, find the release workflow run, and download the `extension-package` artifact
 
 ### Continuous Integration
 
@@ -99,22 +131,24 @@ The project uses GitHub Actions for CI/CD:
    git checkout -b feature/your-feature-name
    ```
 
-3. Make your changes
-4. Run tests:
+3. Make your changes and commit them:
 
    ```bash
-   npm test
+   git add .
+   git commit -m "Add your feature"
+   ```
+
+4. Push your changes:
+
+   ```bash
+   git push origin feature/your-feature-name
    ```
 
 5. Create a pull request
 
-### Branch Protection
+## License
 
-The `master` branch is protected:
-
-- Requires pull request reviews
-- Requires passing CI checks
-- No direct pushes to master
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## How it Works
 
@@ -140,7 +174,3 @@ This extension:
 - Only stores your filter preference locally
 
 For more details, see our [Privacy Policy](PRIVACY.md).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
