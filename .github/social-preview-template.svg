@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280" height="640" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1280" height="640" fill="#1a1a1a"/>
+  
+  <!-- Logo container -->
+  <g transform="translate(160, 120)">
+    <!-- Extension icon (copied from icon.svg but larger) -->
+    <circle cx="200" cy="200" r="180" fill="#2196F3"/>
+    <path d="M96 120h408v48L360 312v96l-96 48V312L120 168v-48z" 
+          fill="white" 
+          stroke="white" 
+          stroke-width="12"/>
+  </g>
+  
+  <!-- Text -->
+  <g transform="translate(520, 180)">
+    <text x="0" y="0" 
+          font-family="Arial, sans-serif" 
+          font-size="72" 
+          font-weight="bold" 
+          fill="white">
+      Laneros Item Filter
+    </text>
+    <text x="0" y="100" 
+          font-family="Arial, sans-serif" 
+          font-size="36" 
+          fill="#cccccc">
+      Chrome extension to hide sold items
+    </text>
+    <text x="0" y="160" 
+          font-family="Arial, sans-serif" 
+          font-size="36" 
+          fill="#cccccc">
+      on laneros.com marketplace
+    </text>
+  </g>
+</svg> 
