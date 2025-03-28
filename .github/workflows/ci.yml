@@ -1,10 +1,11 @@
 name: CI
 
+# Workflow runs on push to master and pull requests
 on:
   push:
-    branches: [ main ]
+    branches: [ master, test/** ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   test:
@@ -12,10 +13,10 @@ jobs:
     name: Run Tests
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'
@@ -32,10 +33,10 @@ jobs:
     needs: test
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'
@@ -59,7 +60,8 @@ jobs:
           -x "jest.e2e.setup.js"
       
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: extension-package
-        path: extension.zip 
+        path: extension.zip
+        retention-days: 5 # Keep artifacts for 5 days to save storage 

@@ -36,17 +36,7 @@ The extension consists of the following main components:
 - `styles.css`: Extension styles
 - `icons/`: Directory containing extension icons (16x16, 48x48, and 128x128 pixels)
 
-### Required Icons
-
-You'll need to add three icon files to the `icons/` directory:
-
-- `icon16.png` (16x16 pixels)
-- `icon48.png` (48x48 pixels)
-- `icon128.png` (128x128 pixels)
-
-These icons will be used in the Chrome toolbar and extension management page.
-
-### Building the Extension
+### Setup Development Environment
 
 1. Install dependencies:
 
@@ -60,27 +50,71 @@ These icons will be used in the Chrome toolbar and extension management page.
    npm run generate-icons
    ```
 
-3. Pack the extension:
+### Testing
+
+The project includes unit tests and end-to-end tests:
+
+1. Run unit tests:
+
+   ```bash
+   npm test
+   ```
+
+2. Run tests in watch mode:
+
+   ```bash
+   npm run test:watch
+   ```
+
+3. Run end-to-end tests:
+
+   ```bash
+   npm run test:e2e
+   ```
+
+### Building
+
+1. Create a production build:
 
    ```bash
    npm run pack
    ```
 
-This will create an `extension.zip` file containing the packed extension.
+   This will create an `extension.zip` file ready for distribution.
 
-### Publishing to Chrome Web Store
+### Continuous Integration
 
-1. Create a Chrome Web Store Developer account at https://chrome.google.com/webstore/devconsole
-2. Pay the one-time registration fee
-3. Click "New Item" and upload the `extension.zip` file
-4. Fill in the required information:
-   - Detailed description
-   - Screenshots
-   - Privacy policy
-   - Category (Productivity)
-5. Submit for review
+The project uses GitHub Actions for CI/CD:
 
-Note: The review process typically takes a few business days.
+- Automated tests run on pull requests
+- Release workflow creates packages for new tags
+- Branch protection ensures code quality
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch:
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+3. Make your changes
+4. Run tests:
+
+   ```bash
+   npm test
+   ```
+
+5. Create a pull request
+
+### Branch Protection
+
+The `master` branch is protected:
+
+- Requires pull request reviews
+- Requires passing CI checks
+- No direct pushes to master
 
 ## How it Works
 
@@ -96,10 +130,17 @@ The extension injects a content script into laneros.com pages that:
 2. The extension will automatically start filtering sold items on laneros.com marketplace pages
 3. You can disable the filtering by clicking the extension icon again
 
-## Contributing
+## Privacy
 
-Feel free to submit issues and enhancement requests!
+This extension:
+
+- Does not collect any personal data
+- Does not track your browsing
+- Only runs on laneros.com
+- Only stores your filter preference locally
+
+For more details, see our [Privacy Policy](PRIVACY.md).
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

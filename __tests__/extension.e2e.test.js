@@ -7,8 +7,10 @@ describe('Extension End-to-End Tests', () => {
 
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      headless: false,
+      headless: 'new',
       args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
         `--disable-extensions-except=${path.join(__dirname, '..')}`,
         `--load-extension=${path.join(__dirname, '..')}`
       ]
@@ -16,7 +18,9 @@ describe('Extension End-to-End Tests', () => {
   });
 
   afterAll(async () => {
-    await browser.close();
+    if (browser) {
+      await browser.close();
+    }
   });
 
   beforeEach(async () => {
@@ -24,7 +28,9 @@ describe('Extension End-to-End Tests', () => {
   });
 
   afterEach(async () => {
-    await page.close();
+    if (page) {
+      await page.close();
+    }
   });
 
   it('should load the extension popup', async () => {
