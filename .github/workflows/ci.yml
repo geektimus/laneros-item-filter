@@ -1,11 +1,11 @@
 name: CI
 
-# Workflow runs on push to main and pull requests
+# Workflow runs on push to master and pull requests
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   test:
