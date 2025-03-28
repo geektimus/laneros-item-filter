@@ -40,6 +40,7 @@ This Chrome extension helps you filter out sold items on laneros.com marketplace
 ## Privacy
 
 This extension:
+
 - Does not collect any personal data
 - Does not track your browsing
 - Only runs on laneros.com
@@ -54,10 +55,11 @@ We welcome contributions! Please see our [Contributing Guide](../CONTRIBUTING.md
 ## Support
 
 If you encounter any issues or have suggestions:
+
 1. Check our [Issues page](https://github.com/yourusername/laneros-item-filter/issues)
 2. Open a new issue if needed
 3. Provide as much detail as possible about the problem
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details. 
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.

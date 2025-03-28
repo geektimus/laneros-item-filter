@@ -48,4 +48,12 @@ chrome.storage.sync.get(['filterEnabled'], function(result) {
       hideSoldItems();
     }
   }
-}); 
+});
+
+// Export functions for testing
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    hideSoldItems,
+    showAllItems
+  };
+} 

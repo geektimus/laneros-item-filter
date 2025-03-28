@@ -39,11 +39,13 @@ The extension consists of the following main components:
 ### Setup Development Environment
 
 1. Install dependencies:
+
    ```bash
    npm install
    ```
 
 2. Generate icons:
+
    ```bash
    npm run generate-icons
    ```
@@ -53,16 +55,19 @@ The extension consists of the following main components:
 The project includes unit tests and end-to-end tests:
 
 1. Run unit tests:
+
    ```bash
    npm test
    ```
 
 2. Run tests in watch mode:
+
    ```bash
    npm run test:watch
    ```
 
 3. Run end-to-end tests:
+
    ```bash
    npm run test:e2e
    ```
@@ -70,9 +75,11 @@ The project includes unit tests and end-to-end tests:
 ### Building
 
 1. Create a production build:
+
    ```bash
    npm run pack
    ```
+
    This will create an `extension.zip` file ready for distribution.
 
 ### Continuous Integration
@@ -87,19 +94,24 @@ The project uses GitHub Actions for CI/CD:
 
 1. Fork the repository
 2. Create a feature branch:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
+
 3. Make your changes
 4. Run tests:
+
    ```bash
    npm test
    ```
+
 5. Create a pull request
 
 ### Branch Protection
 
 The `master` branch is protected:
+
 - Requires pull request reviews
 - Requires passing CI checks
 - No direct pushes to master
@@ -121,6 +133,7 @@ The extension injects a content script into laneros.com pages that:
 ## Privacy
 
 This extension:
+
 - Does not collect any personal data
 - Does not track your browsing
 - Only runs on laneros.com
@@ -130,4 +143,4 @@ For more details, see our [Privacy Policy](PRIVACY.md).
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

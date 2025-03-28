@@ -5,9 +5,10 @@
   "main": "content.js",
   "scripts": {
     "generate-icons": "node scripts/generate-icons.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "jest --testPathIgnorePatterns=.*\\.e2e\\.test\\.js$",
+    "test:watch": "jest --watch --testPathIgnorePatterns=.*\\.e2e\\.test\\.js$",
     "test:e2e": "jest --config jest.e2e.config.js",
+    "test:all": "npm run test && npm run test:e2e",
     "pack": "zip -r extension.zip . -x \"node_modules/*\" \".git/*\" \".github/*\" \"*.zip\""
   },
   "keywords": [
