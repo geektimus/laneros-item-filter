@@ -1,0 +1,78 @@
+.laneros-filter-popup {
+  width: 300px;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.laneros-filter-popup .container {
+  text-align: center;
+}
+
+.laneros-filter-popup h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.laneros-filter-popup .toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Toggle Switch Styles */
+.laneros-filter-popup .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.laneros-filter-popup .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.laneros-filter-popup .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.laneros-filter-popup .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+.laneros-filter-popup input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.laneros-filter-popup input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.laneros-filter-popup .slider.round {
+  border-radius: 34px;
+}
+
+.laneros-filter-popup .slider.round:before {
+  border-radius: 50%;
+}
+
+.laneros-filter-popup #toggleLabel {
+  font-size: 14px;
+  color: #666;
+} 

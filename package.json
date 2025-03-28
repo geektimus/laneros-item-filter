@@ -1,0 +1,27 @@
+{
+  "name": "laneros-item-filter",
+  "version": "1.0.0",
+  "description": "Chrome extension to filter sold items on laneros.com",
+  "main": "content.js",
+  "scripts": {
+    "generate-icons": "node scripts/generate-icons.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:e2e": "jest --config jest.e2e.config.js",
+    "pack": "zip -r extension.zip . -x \"node_modules/*\" \".git/*\" \".github/*\" \"*.zip\""
+  },
+  "keywords": [
+    "chrome-extension",
+    "laneros",
+    "filter",
+    "marketplace"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sharp": "^0.33.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "puppeteer": "^22.0.0"
+  }
+} 
