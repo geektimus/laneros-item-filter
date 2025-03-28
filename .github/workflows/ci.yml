@@ -9,6 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    name: Run Tests
 
     steps:
     - uses: actions/checkout@v3
@@ -24,10 +25,11 @@ jobs:
       
     - name: Run tests
       run: npm test
-      
+
   build:
-    needs: test
     runs-on: ubuntu-latest
+    name: Build Extension
+    needs: test
     
     steps:
     - uses: actions/checkout@v3
@@ -46,10 +48,18 @@ jobs:
       
     - name: Create extension package
       run: |
-        zip -r extension.zip . -x "node_modules/*" ".git/*" ".github/*" "*.zip"
-        
-    - name: Upload extension
+        zip -r extension.zip . \
+          -x "node_modules/*" \
+          -x ".git/*" \
+          -x ".github/*" \
+          -x "*.zip" \
+          -x "__tests__/*" \
+          -x "jest.config.js" \
+          -x "jest.e2e.config.js" \
+          -x "jest.e2e.setup.js"
+      
+    - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: extension
+        name: extension-package
         path: extension.zip 
