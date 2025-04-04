@@ -1,44 +1,73 @@
-# Privacy Policy for Laneros Item Filter
+# Privacy Policy for Laneros Item Filter Chrome Extension
 
-Last updated: March 2024
+Last Updated: [Current Date]
 
-## Overview
+## Introduction
 
-Laneros Item Filter is a simple Chrome extension that helps users filter out sold items on laneros.com marketplace. This extension does not collect, store, or transmit any personal data.
+This privacy policy explains how the Laneros Item Filter Chrome Extension
+("we", "our", or "the extension") handles user data. We are committed to
+protecting your privacy and being transparent about our data practices.
 
-## Data Access
+## Data Collection and Usage
 
-The extension only:
+### What We Collect
 
-- Reads the content of laneros.com marketplace pages
-- Modifies the visibility of sold items on the page
-- Stores your filter preference locally in your browser
+The Laneros Item Filter Chrome Extension collects and stores:
+
+- User preferences for filter settings (whether sold items should be hidden or
+  shown)
+
+### How We Use the Data
+
+- The filter preference is stored locally in your browser using Chrome's
+  storage API
+- This data is used solely to remember your chosen settings between browser sessions
+- No data is transmitted to external servers
+- No personal information is collected or stored
+
+### Data Storage
+
+- All data is stored locally on your device using Chrome's built-in storage API
+- Data never leaves your browser
+- You can clear this data at any time by removing the extension
 
 ## Permissions
 
 The extension requires the following permissions:
 
-- `activeTab`: To interact with the current tab
-- `storage`: To save your filter preference locally
+1. `storage`: Used only to save your filter preferences locally
+2. `activeTab`: Used only to modify the current webpage to hide sold items when
+   viewing laneros.com
+3. Host permission for `laneros.com`: Required to run the extension on laneros.com
+   marketplace pages
 
-## Data Collection
+## Third-Party Services
 
-This extension does not:
+- This extension does not use any third-party services
+- We do not share any data with third parties
+- We do not use analytics or tracking services
 
-- Collect any personal information
-- Store any data on external servers
-- Share any data with third parties
-- Track your browsing history
-- Use cookies or similar tracking technologies
+## Data Security
 
-## Data Storage
+- Since all data is stored locally and no personal information is collected,
+  there is no risk of data breaches
+- We do not have access to any user data
 
-The only data stored is your filter preference (enabled/disabled) in your browser's local storage. This data:
+## Changes to This Policy
 
-- Is stored locally on your device
-- Is not transmitted anywhere
-- Can be cleared by removing the extension
+We may update this privacy policy from time to time. We will notify users of any
+material changes by updating the "Last Updated" date at the top of this policy.
 
 ## Contact
 
-If you have any questions about this privacy policy, please open an issue in the [GitHub repository](https://github.com/yourusername/laneros-item-filter).
+If you have any questions about this privacy policy or our data practices,
+please create an issue in our GitHub repository at:
+[Laneros Item Filter Issues](https://github.com/geektimus/laneros-item-filter/issues)
+
+## Your Rights
+
+You have the right to:
+
+- Access your stored preferences
+- Delete your stored preferences by removing the extension
+- Use the extension without providing any personal information
