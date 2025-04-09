@@ -1,7 +1,7 @@
 // Function to hide sold items
 function hideSoldItems() {
   try {
-    const soldItems = document.querySelectorAll("div.structItem--thread:has(.structItem-status--locked)");
+    const soldItems = document.querySelectorAll("div.structItemContainer-group.js-threadList div.structItem--thread:has(.structItem-status--locked)");
     soldItems.forEach(el => {
       if (el && el.style) {
         el.style.display = 'none';
@@ -15,7 +15,7 @@ function hideSoldItems() {
 // Function to show all items
 function showAllItems() {
   try {
-    const soldItems = document.querySelectorAll("div.structItem--thread:has(.structItem-status--locked)");
+    const soldItems = document.querySelectorAll("div.structItemContainer-group.js-threadList div.structItem--thread:has(.structItem-status--locked)");
     soldItems.forEach(el => {
       if (el && el.style) {
         el.style.display = '';
