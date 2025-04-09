@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
@@ -37,47 +37,27 @@ jobs:
             -x "jest.e2e.config.js" \
             -x "jest.e2e.setup.js"
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+      - name: Rename extension package
+        run: |
+          cp extension.zip laneros-item-filter-${{ github.ref_name }}.zip
+
+      - name: Publish GitHub Release
+        uses: release-drafter/release-drafter@v5
+        with:
+          name: Release ${{ github.ref_name }}
+          tag: ${{ github.ref_name }}
+          publish: true
+          prerelease: false
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Release Assets
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref_name }}
-          draft: false
-          prerelease: false
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./extension.zip
-          asset_name: laneros-item-filter-${{ github.ref_name }}.zip
-          asset_content_type: application/zip
-
-  publish-chrome:
-    name: Publish to Chrome Web Store
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Download extension package
-        uses: actions/download-artifact@v3
-        with:
-          name: extension-package
-          path: ./extension
-
-      - name: Publish to Chrome Web Store
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${{ github.ref }}"
-          prerelease: false
-          title: "Release ${{ github.ref_name }}"
+          name: Release ${{ github.ref_name }}
           files: |
-            extension.zip 
+            extension.zip
+            laneros-item-filter-${{ github.ref_name }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
