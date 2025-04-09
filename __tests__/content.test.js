@@ -33,7 +33,7 @@ describe('Content Script', () => {
       contentModule.hideSoldItems();
 
       expect(document.querySelectorAll).toHaveBeenCalledWith(
-        'div.structItem--thread:has(.structItem-status--locked)'
+        'div.structItemContainer-group.js-threadList div.structItem--thread:has(.structItem-status--locked)'
       );
       expect(mockElement.style.display).toBe('none');
     });
@@ -45,7 +45,7 @@ describe('Content Script', () => {
       contentModule.hideSoldItems();
 
       expect(document.querySelectorAll).toHaveBeenCalledWith(
-        'div.structItem--thread:has(.structItem-status--locked)'
+        'div.structItemContainer-group.js-threadList div.structItem--thread:has(.structItem-status--locked)'
       );
     });
 
@@ -71,7 +71,7 @@ describe('Content Script', () => {
       contentModule.showAllItems();
 
       expect(document.querySelectorAll).toHaveBeenCalledWith(
-        'div.structItem--thread:has(.structItem-status--locked)'
+        'div.structItemContainer-group.js-threadList div.structItem--thread:has(.structItem-status--locked)'
       );
       expect(mockElement.style.display).toBe('');
     });
@@ -100,7 +100,7 @@ describe('Content Script', () => {
       messageCallback({ action: 'enableFilter' }, {}, sendResponse);
 
       expect(document.querySelectorAll).toHaveBeenCalledWith(
-        'div.structItem--thread:has(.structItem-status--locked)'
+        'div.structItemContainer-group.js-threadList div.structItem--thread:has(.structItem-status--locked)'
       );
       expect(sendResponse).toHaveBeenCalledWith({ success: true });
     });
@@ -113,7 +113,7 @@ describe('Content Script', () => {
       messageCallback({ action: 'disableFilter' }, {}, sendResponse);
 
       expect(document.querySelectorAll).toHaveBeenCalledWith(
-        'div.structItem--thread:has(.structItem-status--locked)'
+        'div.structItemContainer-group.js-threadList div.structItem--thread:has(.structItem-status--locked)'
       );
       expect(sendResponse).toHaveBeenCalledWith({ success: true });
     });
@@ -133,7 +133,7 @@ describe('Content Script', () => {
       require('../content');
 
       expect(document.querySelectorAll).toHaveBeenCalledWith(
-        'div.structItem--thread:has(.structItem-status--locked)'
+        'div.structItemContainer-group.js-threadList div.structItem--thread:has(.structItem-status--locked)'
       );
     });
 
@@ -172,7 +172,7 @@ describe('Content Script', () => {
       handler();
 
       expect(document.querySelectorAll).toHaveBeenCalledWith(
-        'div.structItem--thread:has(.structItem-status--locked)'
+        'div.structItemContainer-group.js-threadList div.structItem--thread:has(.structItem-status--locked)'
       );
     });
   });
