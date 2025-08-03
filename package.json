@@ -9,7 +9,8 @@
     "test:watch": "jest --watch --testPathIgnorePatterns=.*\\.e2e\\.test\\.js$",
     "test:e2e": "jest --config jest.e2e.config.js",
     "test:all": "npm run test && npm run test:e2e",
-    "pack": "zip -r extension.zip . -x \"node_modules/*\" \".git/*\" \".github/*\" \"*.zip\""
+    "pack": "zip -r extension.zip . -x \"node_modules/*\" \".git/*\" \".github/*\" \"*.zip\" \"__tests__/*\" \"jest.config.js\" \"jest.e2e.config.js\" \"jest.e2e.setup.js\"",
+    "pack:version": "npm run pack && cp extension.zip laneros-item-filter-v$npm_package_version.zip"
   },
   "keywords": [
     "chrome-extension",

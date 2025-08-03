@@ -174,3 +174,18 @@ This extension:
 - Only stores your filter preference locally
 
 For more details, see our [Privacy Policy](PRIVACY.md).
+
+## Packaging for Manual Publishing
+
+To create a packaged version (.zip) of the extension for manual upload to the Chrome Web Store:
+
+1. Make sure you have Node.js installed
+2. Run one of the following commands:
+
+   ```bash
+   npm run pack              # Creates extension.zip
+   npm run pack:version      # Creates extension.zip and laneros-item-filter-v[VERSION].zip
+   ```
+
+3. The zip file will be created in the project root directory
+4. You can upload this zip file to the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole/)
